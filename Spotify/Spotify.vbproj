@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{448A2934-50FC-4C8E-965B-60218ED1071D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Spotify.My.MyApplication</StartupObject>
+    <RootNamespace>Spotify</RootNamespace>
+    <AssemblyName>Spotify</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Spotify.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Spotify.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.33.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.0.33\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DOMINIO\Artista.vb" />
+    <Compile Include="DOMINIO\Album.vb" />
+    <Compile Include="DOMINIO\Cancion.vb" />
+    <Compile Include="DOMINIO\Concierto.vb" />
+    <Compile Include="DOMINIO\Pais.vb" />
+    <Compile Include="DOMINIO\Setlist.vb" />
+    <Compile Include="DOMINIO\Sitio.vb" />
+    <Compile Include="PERSISTENCIA\SetlistDAO.vb" />
+    <Compile Include="PRESENTACION\Gestordeconsultas.Designer.vb">
+      <DependentUpon>Gestordeconsultas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENTACION\Gestordeconsultas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENTACION\Navegacion.Designer.vb">
+      <DependentUpon>Navegacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENTACION\Navegacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENTACION\Gestión de tablas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENTACION\Gestión de tablas.Designer.vb">
+      <DependentUpon>Gestión de tablas.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PERSISTENCIA\AgenteBD.vb" />
+    <Compile Include="PERSISTENCIA\AlbumDAO.vb" />
+    <Compile Include="PERSISTENCIA\ArtistaDAO.vb" />
+    <Compile Include="PERSISTENCIA\CancionDAO.vb" />
+    <Compile Include="PERSISTENCIA\ConciertoDAO.vb" />
+    <Compile Include="PERSISTENCIA\PaisDAO.vb" />
+    <Compile Include="PERSISTENCIA\SitioDAO.vb" />
+    <Compile Include="PRESENTACION\CrearConcierto.Designer.vb">
+      <DependentUpon>CrearConcierto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENTACION\CrearConcierto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENTACION\Principal.Designer.vb">
+      <DependentUpon>Principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENTACION\Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENTACION\Gestordeconsultas.resx">
+      <DependentUpon>Gestordeconsultas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENTACION\Navegacion.resx">
+      <DependentUpon>Navegacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENTACION\Gestión de tablas.resx">
+      <DependentUpon>Gestión de tablas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENTACION\CrearConcierto.resx">
+      <DependentUpon>CrearConcierto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENTACION\Principal.resx">
+      <DependentUpon>Principal.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\FONDO.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FONDO2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
